@@ -1,0 +1,21 @@
+@import "../../../app/_styles/mixins";
+
+.stock-other-stocks {
+
+    &__heading {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+        margin-bottom: 1rem;
+    }
+
+    & button {
+        border-color: var(--color-transparent-black);
+
+        & svg path {
+            fill: var(--color-transparent-black);
+        }
+    }
+}

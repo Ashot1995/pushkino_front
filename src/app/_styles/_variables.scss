@@ -1,0 +1,48 @@
+:root {
+  // BASE FONT SIZE
+  --font-size-base: 10px;
+
+  // BREAK POINTS
+  --screen-large-num: 1440;
+  --screen-middle-num: 720;
+  --screen-small-num: 360;
+
+  // FONT FAMILY (переменные объявлены в общем лайауте src/app/layout.jsx)
+  //--family-raleway
+  //--family-russo-one
+
+  // COLORS
+  --bg-orange:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.00) 100%),
+          linear-gradient(65deg, #D15C34 6.02%, #CD4C23 99.42%);
+  --bg-cyan:
+          linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.12) 100%),
+          linear-gradient(65deg, #40A0AD 6.02%, #026674 99.42%);
+  --bg-green:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%),
+          linear-gradient(65deg, #388678 6.02%, #257873 99.42%);
+  --bg-rim:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.00) 100%),
+          linear-gradient(65deg, #751415 6.02%, #560203 99.42%);
+
+  --color-primary-orange: #ed5d2b;
+  --color-primary-blue: #3383a4;
+  --color-primary-green: #388678;
+  --color-primary-purple: #9e2e46;
+
+  --color-additional-orange: #f5ba46;
+  --color-additional-green: #40831c;
+  --color-additional-light-green: #80b895;
+
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey-light: #959595;
+  --color-transparent-black: rgba(1, 1, 1, .2);
+  --color-transparent-black20: rgba(0, 0, 0, .2);
+  --color-transparent-black30: rgba(0, 0, 0, .3);
+  --color-transparent-black50: rgba(0, 0, 0, .5);
+  --color-transparent-white: rgba(255, 255, 255, .7);
+
+  --prop-scroll-bar-width: 0;
+  --animation-transition: .2s cubic-bezier(0.33,0,0.3,1);
+}

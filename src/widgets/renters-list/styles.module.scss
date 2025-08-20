@@ -1,0 +1,39 @@
+@import "../../app/_styles/mixins";
+
+.renters-list {
+
+    &__heading {
+        color: var(--color-primary-blue);
+        margin-bottom: 3rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: block;
+        }
+
+        &_four-columns {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+
+    &__message {
+        grid-column: span 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1.2rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.33;
+        color: var(--color-black);
+    }
+}

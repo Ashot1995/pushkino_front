@@ -1,0 +1,65 @@
+@import "../../../app/_styles/mixins";
+
+.checkbox {
+    cursor: pointer;
+    position: relative;
+    transition: var(--animation-transition);
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 1rem;
+
+    input {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &:checked + .checkbox-check {
+            border-color: var(--color-primary-orange);
+            background-color: var(--color-primary-orange);
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-check {
+        content: '';
+        width: 1.6rem;
+        height: 1.6rem;
+        border: 1px solid var(--color-transparent-black);
+        border-radius: .2rem;
+        background: var(--color-white) ;
+        transition: var(--animation-transition);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:before {
+            content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M3.00409 4.59409L6.29409 1.29409C6.4824 1.10579 6.73779 1 7.00409 1C7.27039 1 7.52579 1.10579 7.71409 1.29409C7.9024 1.48239 8.00818 1.73779 8.00818 2.00409C8.00818 2.27039 7.9024 2.52579 7.71409 2.71409L3.71409 6.71409C3.62113 6.80782 3.51053 6.88221 3.38867 6.93298C3.26681 6.98375 3.1361 7.00989 3.00409 7.00989C2.87208 7.00989 2.74137 6.98375 2.61951 6.93298C2.49766 6.88221 2.38705 6.80782 2.29409 6.71409L0.294092 4.71409C0.105788 4.52579 0 4.27039 0 4.00409C0 3.73779 0.105788 3.48239 0.294092 3.29409C0.482395 3.10579 0.73779 3 1.00409 3C1.27039 3 1.52579 3.10579 1.71409 3.29409L3.00409 4.59409Z" fill="white"/></svg>');
+            opacity: 0;
+            transition: var(--animation-transition);
+            line-height: 0;
+        }
+    }
+
+    span,
+    a {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.43;
+        user-select: none;
+        color: var(--color-black);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

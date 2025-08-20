@@ -1,0 +1,82 @@
+@import "../../app/_styles/mixins";
+
+.page-not-found {
+
+    &__heading {
+        font-size: 7.2rem;
+        font-weight: 600;
+        line-height: 1.16;
+        color: var(--color-primary-blue);
+        text-transform: uppercase;
+        margin-bottom: 5rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 3.2rem;
+            line-height: normal;
+            letter-spacing: 0.032rem;
+        }
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 4fr 8fr;
+        column-gap: 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            grid-template-columns: 1fr;
+            gap: 6rem 0;
+            margin-bottom: 6rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            row-gap: 4rem;
+        }
+    }
+
+    &__description {
+        @include screen-breakpoint($screen-middle-px) {
+            order: 1;
+        }
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.33;
+        color: var(--color-black);
+        margin-bottom: 4rem;
+    }
+    &__link {
+
+        @include screen-breakpoint($screen-small-px) {
+            width: 100%;
+        }
+    }
+
+    &__image {
+        position: relative;
+        width: 80.7rem;
+        height: 41.3rem;
+
+        @media (max-width: $screen-middle-px) {
+            width: 100%;
+            height: 30.9rem;
+        }
+
+        @media (max-width: $screen-small-px) {
+            width: 100%;
+            height: 20rem;
+        }
+    }
+
+    &__copyright {
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.42;
+        color: var(--color-black);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.2rem;
+            line-height: 1.66;
+        }
+    }
+}

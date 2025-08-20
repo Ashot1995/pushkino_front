@@ -1,0 +1,31 @@
+{
+  "name": "pushkino-park",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "rimraf .next && next build",
+    "start": "next start -p 8080"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.1",
+    "d3": "^7.9.0",
+    "next": "14.1.1",
+    "next-yandex-metrica": "^1.1.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.3",
+    "react-redux": "^9.1.0",
+    "swiper": "^11.0.7",
+    "use-debounce": "^10.0.0",
+    "use-mask-input": "^3.3.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "rimraf": "^5.0.7",
+    "sass": "^1.71.1",
+    "typescript": "^5"
+  }
+}

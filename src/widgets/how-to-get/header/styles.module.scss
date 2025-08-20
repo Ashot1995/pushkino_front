@@ -1,0 +1,53 @@
+@import "../../../app/_styles/mixins";
+
+.htg-header {
+
+    &__heading {
+        color: var(--color-primary-blue);
+        margin-bottom: 3rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__move-type {
+        display: flex;
+        column-gap: 4rem;
+        cursor: pointer;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--color-transparent-black);
+    }
+
+    &__move-type-item {
+        display: flex;
+        column-gap: 1.2rem;
+        align-items: center;
+
+        & span {
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.33;
+            text-transform: uppercase;
+            color: var(--color-black);
+
+            @include screen-breakpoint($screen-small-px) {
+                display: none;
+            }
+        }
+
+        &_active {
+            & span {
+                color: var(--color-primary-blue);
+
+                @include screen-breakpoint($screen-small-px) {
+                    display: block;
+                }
+            }
+
+            & svg {
+                fill: var(--color-primary-blue);
+            }
+        }
+    }
+}

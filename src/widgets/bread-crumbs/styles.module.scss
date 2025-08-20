@@ -1,0 +1,28 @@
+@import "../../app/_styles/mixins";
+
+.bread-crumbs {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    color: var(--color-black);
+    margin-bottom: 1.6rem;
+
+    a, span {
+        line-height: 1.333;
+    }
+
+    @include screen-breakpoint($screen-middle-px) {
+        font-size: 1.4rem;
+        line-height: 1.42857;
+    }
+
+    &__wrapper {
+        display: flex;
+        column-gap: .8rem;
+        align-items: center;
+    }
+
+    &__link {}
+
+    &__current-leave {}
+}

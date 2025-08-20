@@ -1,0 +1,239 @@
+@import '../../../app/_styles/mixins';
+
+.stocks {
+  position: relative;
+
+  &__full-screen {
+    position: absolute;
+    background-color: var(--color-black);
+    width: 50%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    z-index: 1;
+
+    @include screen-breakpoint($screen-small-px) {
+      display: block;
+    }
+  }
+
+  &__description {
+    background-color: var(--color-black);
+    grid-column: span 9; // 37%
+    padding: 5rem 10rem 5rem 13rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+      padding: 4rem 6rem 4rem 3rem;
+      grid-column: span 12;
+    }
+  }
+
+  &__heading {
+    font-weight: 600;
+    font-size: 7.2rem;
+    line-height: 1.16667;
+    text-transform: uppercase;
+    color: var(--color-white);
+    margin-bottom: 8rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+      font-size: 3.2rem;
+      letter-spacing: 0.01em;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__content {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    color: var(--color-white);
+    margin-bottom: 4rem;
+
+    @include screen-breakpoint($screen-small-px) {
+      font-weight: 600;
+    }
+  }
+
+  &__button {
+    margin-bottom: 33rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+      margin-bottom: 7.3rem;
+    }
+  }
+
+  &__content-warning {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.42857;
+    color: rgba(255, 255, 255, .5);
+  }
+
+  &__slider {
+    --speed: 30s;
+    --count: 1;
+
+    position: relative;
+    height: 80rem;
+    overflow: hidden;
+    background-color: var(--color-white);
+    grid-column: span 15;
+
+    @include screen-breakpoint($screen-middle-px) {
+      grid-column: span 12;
+      height: 43rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+      height: 55.8rem;
+    }
+
+    //&:hover .stocks__slider-slide {
+    //  animation-play-state: paused;
+    //}
+  }
+
+  &__slider-go-up,
+  &__slider-go-down {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 25%;
+      z-index: 1;
+  }
+
+  &__slider-go-up {
+    top: 0;
+  }
+
+  &__slider-go-down {
+    bottom: 0;
+  }
+
+  &__slider-wrapper {
+    max-width: 83rem;
+    padding-left: 4rem;
+    transform: translateY(-80rem);
+
+    @include screen-breakpoint($screen-middle-px) {
+      padding: 0 1rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+      padding: 0;
+    }
+
+    @include hover() {
+      .stocks__slider-slide {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+  &__slider-slide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-bottom: 2rem;
+
+    --delay: calc((var(--speed) / var(--count)) * (var(--index, 0) - 8));
+    //animation: slide-down var(--speed) var(--delay) infinite linear;
+    translate: 0 calc((var(--count) - var(--index)) * 100%);
+
+    @include screen-breakpoint($screen-middle-px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.3rem;
+      grid-auto-flow: column;
+    }
+
+    //&:nth-of-type(1) { --index: 0; }
+    //&:nth-of-type(2) { --index: 1; }
+    //&:nth-of-type(3) { --index: 2; }
+    //&:nth-of-type(4) { --index: 3; }
+    //&:nth-of-type(5) { --index: 4; }
+
+    &_up {
+      animation: slide-up var(--speed) var(--delay) infinite linear;
+    }
+
+    &_down {
+      animation: slide-down var(--speed) var(--delay) infinite linear;
+    }
+  }
+
+  &__slide-tile {
+    display: block;
+    position: relative;
+    width: 25rem;
+    height: 50rem;
+    border-radius: 20rem;
+    overflow: hidden;
+
+    @include screen-breakpoint($screen-middle-px) {
+      border-radius: 13.3rem;
+      width: 15.9rem;
+      height: 33.1rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+      border-radius: 13.9rem;
+      width: 17.3rem;
+      height: 34.6rem;
+    }
+
+    &:nth-child(2) {
+      transform: translateY(50%);
+
+      @include screen-breakpoint($screen-middle-px) {
+        transform: none;
+      }
+    }
+
+    &:nth-child(even) {
+
+      @include screen-breakpoint($screen-middle-px) {
+        transform: translateY(50%);
+      }
+    }
+  }
+
+  &__slide-heading {
+    position: absolute;
+    bottom: 8.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    color: var(--color-white);
+
+    @include screen-breakpoint($screen-middle-px) {
+      font-size: 1.2rem;
+      width: 13rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+
+    }
+  }
+}
+
+@keyframes slide-up {
+  100% {
+    translate: 0 calc(var(--index) * -100%);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    translate: 0 calc(var(--index) * -100%);
+  }
+}

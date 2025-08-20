@@ -1,0 +1,24 @@
+// Базовый размер шрифта в зависимости от ширины экрана
+
+@mixin adaptive-font-size($screen-width) {
+    font-size: calc(10 / $screen-width * 100vw);
+}
+
+// Брекпоинты для медиазапросов
+$screen-large-px: 1440px;
+$screen-middle-px: 720px;
+$screen-small-px: 480px;
+
+@mixin screen-breakpoint($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin hover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}

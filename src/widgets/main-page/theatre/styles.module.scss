@@ -1,0 +1,61 @@
+@import "../../../app/_styles/mixins";
+
+.theatre {
+    //max-width: 1440px;
+    margin: 0 auto;
+    background: var(--bg-rim);
+    padding: 5rem 0 7rem 0;
+
+    @include screen-breakpoint($screen-middle-px) {
+        padding: 4rem 0;
+    }
+
+    &__top-line {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem 0;
+
+        @include screen-breakpoint($screen-small-px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__data {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-small-px) {
+            flex-direction: column;
+            row-gap: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__site {
+
+        @include screen-breakpoint($screen-small-px) {
+            display: none;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 7.2rem;
+        line-height: 1.16667;
+        text-transform: uppercase;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 3.2rem;
+            letter-spacing: 0.01em;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            display: inline-block;
+        }
+    }
+}

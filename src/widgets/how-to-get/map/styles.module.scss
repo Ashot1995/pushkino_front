@@ -1,0 +1,102 @@
+@import "../../../app/_styles/mixins";
+
+.htg-map {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &__ymap {
+        position: relative;
+        width: 100%;
+        height: 52.4rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            height: 50rem;
+        }
+    }
+
+    &__route-tile-wrapper {
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1240px;
+        width: 100%;
+        height: auto;
+    }
+
+    &__route-tile {
+        position: absolute;
+        top: 0;
+        left: 2rem;
+        background-color: var(--color-white);
+        border: 1px solid var(--color-transparent-black);
+        border-radius: 2.4rem;
+        padding: 2rem;
+        width: 40.1rem;
+        display: flex;
+        column-gap: 1.7rem;
+        align-items: center;
+
+        @include screen-breakpoint($screen-middle-px) {
+            left: 2rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32rem;
+        }
+    }
+
+    &__route-tile-points {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.7rem;
+        width: 100%;
+    }
+
+    &__route-tile-point {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        row-gap: .4rem;
+    }
+
+    &__route-tile-point-label {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        color: var(--color-black);
+    }
+
+    &__route-tile-point-input {
+        cursor: auto;
+
+        &::placeholder {
+            font-family: "Raleway", sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            text-transform: uppercase;
+            color: var(--color-transparent-black);
+        }
+    }
+
+    &__route-tile-point-input,
+    &__route-tile-point-text {
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+        padding-right: 3rem;
+    }
+
+    &__geo-btn {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,106 @@
+@import '../../../app/_styles/mixins';
+
+.button {
+    --background-color: var(--color-primary-orange);
+    --border: 1px solid var(--color-primary-orange);
+    --color: var(--color-white);
+    --width: fit-content;
+    --cursor: pointer;
+    --padding: 1.2rem 2.4rem;
+
+    padding: var(--padding);
+    color: var(--color);
+    border-radius: 20rem;
+    cursor: var(--cursor);
+    background-color: var(--background-color);
+    text-align: center;
+    border: var(--border);
+
+    @include screen-breakpoint($screen-small-px) {
+        --width: 100%;
+    }
+
+    &_transparent {
+        --background-color: transparent;
+        --border: 1px solid var(--color-white);
+    }
+
+    &:disabled {
+        --color: var(--color-transparent-white);
+        --cursor: default;
+    }
+    svg path {
+
+        transition: var(--animation-transition);
+    }
+
+    &__circle {
+        --padding: 0;
+
+        width: 4.8rem;
+        height: 4.8rem;
+        flex-shrink: 0;
+
+        &:disabled {
+            --background-color: transparent;
+            --border: 1px solid var(--color-transparent-white);
+
+            & svg path {
+                fill: var(--color-transparent-white);
+            }
+        }
+
+        & svg {
+            width: 2.4rem;
+            height: 2.4rem;
+            transition: var(--animation-transition);
+        }
+
+        &_white {
+            --background-color: transparent;
+            --border: 1px solid var(--color-white);
+        }
+
+        &_gray {
+            --background-color: transparent;
+            --border: 1px solid var(--color-transparent-black);
+
+        }
+
+        &_black {
+            --background-color: transparent;
+            --border: 1px solid var(--color-black);
+
+            &:disabled {
+                --background-color: transparent;
+                --border: 1px solid var(--color-transparent-black);
+
+                & svg path {
+                    fill: var(--color-transparent-black);
+                }
+            }
+        }
+
+        &_revers {
+            & svg {
+                transform: rotate(180deg);
+            }
+        }
+        &_white,
+        &_gray,
+        &_black{
+            transition: var(--animation-transition);
+            opacity: .7;
+
+            @include hover() {
+                //--background-color: var(--color-white);
+                //--border: 1px solid var(--color-primary-orange);
+                opacity: 1;
+
+                //svg path{
+                //    fill:  var(--color-primary-orange);
+                //}
+            }
+        }
+    }
+}

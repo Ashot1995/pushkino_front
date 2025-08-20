@@ -1,0 +1,129 @@
+@import "../../../app/_styles/mixins";
+
+.top-panel {
+    padding: 2rem 0;
+    border: {
+        bottom: 1px solid var(--color-transparent-black20);
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.floor-toggle {
+
+}
+
+.toggle-wrapper {
+    @include screen-breakpoint($screen-middle-px) {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 1px);
+        z-index: 50;
+        background: {
+            color: var(--color-white);
+        };
+        border-radius: 0 0 2.4rem 2.4rem;
+        overflow: hidden;
+        transition: transform var(--animation-transition);
+        transform: scaleY(0);
+        transform-origin: top center;
+
+        &-inner {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            border: {
+                left: 1px solid var(--color-transparent-black20);
+                right: 1px solid var(--color-transparent-black20);
+                bottom: 1px solid var(--color-transparent-black20);
+            }
+            border-radius: 0 0 2.4rem 2.4rem;
+        }
+
+        &.active {
+            transform: scaleY(1);
+        }
+    }
+
+    &-inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0 4rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: grid;
+            gap: 1.6rem;
+        }
+    }
+}
+
+.toggle-mobile {
+    display: none;
+
+    @include screen-breakpoint($screen-middle-px) {
+        display: grid;
+        grid-template-columns: 1fr 2.4rem;
+        gap: 0 1.2rem;
+        align-items: center;
+    }
+}
+
+.mobile-label {
+    font: {
+        size: 1.8rem;
+        weight: 600;
+    }
+    text-transform: uppercase;
+    color: var(--color-primary-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-link {
+    font: {
+        size: 1.8rem;
+        weight: 600;
+    };
+    line-height: 1.3;
+    color: var(--color-black);
+    text-transform: uppercase;
+    transition: color var(--animation-transition);
+    cursor: pointer;
+    white-space: nowrap;
+
+    @include hover() {
+        color: var(--color-primary-blue);
+    }
+
+    &.active {
+        color: var(--color-primary-blue);
+    }
+}
+
+.spacer {
+    position: relative;
+
+    @include screen-breakpoint($screen-middle-px) {
+        display: none;
+    }
+}
+
+.checkboxes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    padding: {
+        right: 6.7rem;
+    };
+
+    @include screen-breakpoint($screen-middle-px) {
+        display: none;
+    }
+}

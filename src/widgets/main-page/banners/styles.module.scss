@@ -1,0 +1,57 @@
+@import "../../../app/_styles/mixins";
+
+.main-banner-slider {
+    position: relative;
+    //max-width: 1440px;
+    //margin: 0 auto;
+    height: 85rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+        height: 54rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+        height: 80rem;
+    }
+
+    background: {
+        color: #E2E2E2FF;
+    };
+    border-radius: 2rem;
+
+    &-pagination-bullet {
+        border: 1px solid var(--color-white);
+        border-radius: 100%;
+        width: 0.8rem;
+        height: 0.8rem;
+        background: transparent;
+        opacity: 1;
+        transition: var(--animation-transition);
+        cursor: pointer;
+    }
+
+    &-pagination-bullet-active {
+        border-radius: 19rem;
+        width: 5.2rem;
+        height: 2rem;
+        background: var(--color-white);
+    }
+
+    &__buttons {
+        position: absolute;
+        bottom: 9.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1240px;
+        padding: 0 3rem;
+        width: 100%;
+        display: flex;
+        column-gap: 2rem;
+        cursor: pointer;
+        z-index: 1;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: none;
+        }
+    }
+}

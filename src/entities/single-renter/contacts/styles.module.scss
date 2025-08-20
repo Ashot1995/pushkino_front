@@ -1,0 +1,74 @@
+@import "../../../app/_styles/mixins";
+
+.renter-contacts {
+    margin-bottom: 6rem;
+
+    @include screen-breakpoint($screen-small-px) {
+        margin-bottom: 4rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        column-gap: 5rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            flex-direction: column;
+            gap: 3rem 0;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            row-gap: 2.4rem;
+        }
+    }
+
+    &__local {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem 1.5rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            grid-template-columns: 1fr;
+            gap: 2.4rem 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        column-gap: 1.2rem;
+        align-items: center;
+
+        & span {
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            color: var(--color-primary-blue);
+        }
+    }
+
+    &__social {
+        display: flex;
+        column-gap: 2rem;
+        transform: translateY(-.8rem);
+
+        @include screen-breakpoint($screen-middle-px) {
+            transform: none;
+        }
+
+        & a {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        & img {
+            border: 1px solid var(--color-transparent-black);
+            border-radius: 50%;
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+}

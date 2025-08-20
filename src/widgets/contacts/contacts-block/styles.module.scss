@@ -1,0 +1,75 @@
+@import "../../../app/_styles/mixins";
+
+.contacts-block {
+  &__flex {
+    display: flex;
+    justify-content: space-between
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 2rem;
+    padding: 4rem 0 0;
+    margin: 0 0 4rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+      grid-template-columns: repeat(2,1fr);
+      grid-row-gap: 4rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 4rem;
+    }
+
+    & + & {
+      border-top: 1px solid rgba(0, 0, 0, .2);
+    }
+  }
+
+  &__grid2 {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 2rem;
+    padding: 4rem 0 0;
+    margin: 0 0 4rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+      grid-template-columns: repeat(2,1fr);
+      grid-row-gap: 4rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 4rem;
+    }
+
+    & + & {
+      border-top: 1px solid rgba(0, 0, 0, .2);
+    }
+  }
+
+  &__title {
+    margin: 0 0 2rem;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    color: var(--color-black);
+  }
+
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(2,4rem);
+    grid-gap: 2rem;
+  }
+
+  &__social-links {
+    display: flex;
+    column-gap: 2rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@import "../../../app/_styles/mixins";
+
+.banner-theatre-third-rim {
+    background: var(--bg-rim);
+    padding-top: 22rem;
+    height: 85rem;
+    overflow: hidden;
+
+    @include screen-breakpoint($screen-middle-px) {
+        padding-top: 17.3rem;
+        height: 54rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+        padding: 16rem 0 0 0;
+        height: 80rem;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45rem;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 100%);
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+
+        @include screen-breakpoint($screen-middle-px) {
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+        }
+    }
+
+    &__description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4rem 0 4rem 5rem;
+        max-width: 58.5rem;
+        height: 100%;
+        z-index: 1;
+
+        @include screen-breakpoint($screen-middle-px) {
+            padding: 1.8rem 0 1.8rem 1.8rem;
+            max-width: 32rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            padding: 39rem 0 0 0;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 7.2rem;
+        line-height: 1.16667;
+        text-transform: uppercase;
+        color: var(--color-white);
+        margin-bottom: 6rem;
+        max-width: 58.5rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 3.2rem;
+            letter-spacing: 0.01em;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-white);
+        text-shadow: 0 0 16px 0 rgba(75, 75, 75, 0.2);
+        margin-bottom: 3.2rem;
+        max-width: 38rem;
+        word-wrap: break-word;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 2.4rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            display: none;
+        }
+    }
+
+    &__link {}
+
+    &__image {
+        position: relative;
+        border-radius: 2.4rem;
+        width: 100%;
+        height: 44.6rem;
+        overflow: hidden;
+
+        @include screen-breakpoint($screen-middle-px) {
+            //width: 64.3rem;
+            height: 28rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            width: 36rem;
+            height: 51.5rem;
+            transform: translateX(-2rem);
+            border-radius: 100rem 100rem 0 0;
+        }
+    }
+}

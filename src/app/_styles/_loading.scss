@@ -1,0 +1,41 @@
+@keyframes animate-opacity {
+    0% {
+        opacity: .1;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: .1;
+    }
+}
+
+.loading {
+    opacity: .5;
+
+    &-header {
+        height: 6.4rem;
+    }
+
+    &-body {
+        display: grid;
+        grid-template-columns: 28rem 1fr;
+        gap: 2rem;
+        height: 57.8rem;
+        margin: {
+            top: 2rem;
+        };
+
+        @include screen-breakpoint($screen-middle-px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-effect {
+        background: {
+            color: var(--color-grey-light);
+        };
+        border-radius: 2rem;
+        animation: animate-opacity 2s ease-in-out infinite;
+    }
+}

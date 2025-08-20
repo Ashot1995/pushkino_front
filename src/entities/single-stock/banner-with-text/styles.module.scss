@@ -1,0 +1,97 @@
+@import "../../../app/_styles/mixins";
+
+.single-stock-banner-with-text {
+    margin-bottom: 9rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+        margin-bottom: 6rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+        margin-bottom: 4rem;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            grid-template-columns: 1fr;
+            gap: 6rem 0;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            row-gap: 4rem;
+        }
+    }
+
+    &__banner {
+        width: 100%;
+        height: 38rem;
+        overflow: hidden;
+        border: 1px solid var(--color-transparent-black);
+        border-radius: 2.4rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            order: 1;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            height: 18rem;
+        }
+
+        &_left {
+            order: 0;
+
+            @include screen-breakpoint($screen-middle-px) {
+                order: 1;
+            }
+        }
+
+        &_right {
+            order: 1;
+        }
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__description {
+        padding: 0 3rem 0 7rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            padding: 0;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+        margin-bottom: 4rem;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-black);
+    }
+
+    &__button {
+        margin-top: 4rem;
+
+        & button {
+            @include screen-breakpoint($screen-small-px) {
+                width: 100%;
+            }
+        }
+    }
+}

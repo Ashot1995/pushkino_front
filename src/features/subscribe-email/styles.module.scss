@@ -1,0 +1,13 @@
+@import '../../app/_styles/mixins';
+
+.subscribe-email {
+    display: flex;
+    column-gap: .8rem;
+    margin-bottom: 1.2rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+        margin-bottom: 1.6rem;
+    }
+
+
+}

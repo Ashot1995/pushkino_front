@@ -1,0 +1,44 @@
+@import "../../../app/_styles/mixins";
+
+.stocks-items {
+    grid-column: span 9;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem 2rem;
+        margin-bottom: 4rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            grid-template-columns: 1fr;
+            gap: 3rem 0;
+        }
+    }
+
+    &__button {
+        display: block;
+        margin: 0 auto;
+
+        @include screen-breakpoint($screen-small-px) {
+            width: 100%;
+        }
+    }
+
+    &__message {
+        grid-column: span 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1.2rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.33;
+        color: var(--color-black);
+    }
+}

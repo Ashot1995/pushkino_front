@@ -1,0 +1,111 @@
+@import "mixins";
+
+html {
+    font-size: var(--font-size-base);
+
+    @media screen and (max-width: $screen-large-px) {
+        @include adaptive-font-size(var(--screen-large-num));
+    }
+
+    @media screen and (max-width: $screen-middle-px) {
+        @include adaptive-font-size(var(--screen-middle-num));
+    }
+
+    @media screen and (max-width: $screen-small-px) {
+        @include adaptive-font-size(var(--screen-small-num));
+    }
+}
+
+body {
+    font-family:
+            var(--family-raleway),
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            'Fira Sans',
+            'Droid Sans',
+            'Helvetica Neue',
+            sans-serif;
+    font-style: normal;
+    font-variant-numeric: lining-nums;
+    /*overflow-y: hidden;
+    min-height: 100vh;*/
+
+    //& * {
+    //    outline: 1px solid red;
+    //}
+}
+
+[class*='__container'] {
+    max-width: 1240px;
+    padding: 0 3rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    @include screen-breakpoint($screen-small-px) {
+        padding: 0 2rem;
+    }
+}
+
+.body-hidden {
+    overflow: hidden;
+    padding: {
+        right: var(--prop-scroll-bar-width);
+    };
+
+    header {
+        padding: {
+            right: var(--prop-scroll-bar-width);
+        };
+    }
+}
+
+.root-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+        width: 100%;
+    }
+}
+
+.main-outer {
+    flex: 1 0 auto;
+}
+
+.svg-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.no-scroll-block {
+    overflow: hidden !important;
+}
+
+a {
+  @include hover() {
+      opacity: .85;
+  }
+}
+
+.header_fix {
+    position: absolute;
+    top: 17.5rem;
+    height: 15rem;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10001;
+    width: 100%;
+}

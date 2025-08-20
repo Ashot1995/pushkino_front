@@ -1,0 +1,46 @@
+@import "../../app/_styles/mixins";
+
+.mapplic-container {
+    .mapplic-legend-list {
+        z-index: 120;
+        height: fit-content;
+        position: relative;
+        width: 100%;
+    }
+    .mapplic-legend,
+    .mapplic-control-button {
+        z-index: 101;
+    }
+    .mapplic-legend {
+        top: -20px;
+        height: auto;
+        min-height: fit-content;
+    }
+    .mapplic-legend.closed {
+        height: 30px;
+    }
+
+    .mapplic-legend {
+        height: auto;
+        top: -20px;
+        display: inline-block;
+        position: absolute;
+        z-index: 101;
+        @include screen-breakpoint($screen-middle-px) {
+            display: none !important;
+        }
+    }
+
+    .mapplic-layer-switcher {
+        top: 0;
+        right: 0;
+        height: auto;
+        min-height: fit-content;
+        width: auto;
+        z-index: 100;
+    }
+}
+
+#my-map {
+    z-index: 150;
+}

@@ -1,0 +1,104 @@
+@import "../../../app/_styles/mixins";
+
+.categories {
+    position: relative;
+    grid-column: span 3;
+
+    &__mobile-button {
+        display: none;
+        cursor: pointer;
+        margin-bottom: 2rem;
+
+        & span {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.25; /* 125% */
+            text-transform: uppercase;
+            color: var(--color-primary-blue)
+        }
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: flex;
+            column-gap: 1rem;
+            align-items: center;
+        }
+    }
+
+    &__list {
+
+        @include screen-breakpoint($screen-middle-px) {
+            position: absolute;
+            top: 3rem;
+            left: 0;
+            padding: 0 2rem;
+            max-width: 54rem;
+            width: 100%;
+            background-color: var(--color-white);
+            border-radius: 0 0 2.4rem 2.4rem;
+            border: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: all .5s ease;
+            z-index: 1;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            left: -1.9rem;
+            width: 35.5rem;
+            border-right: none !important;
+            border-left: none !important;
+        }
+
+        &_active {
+            padding: 2rem;
+            border: 1px solid var(--color-transparent-black);
+            border-top: none;
+            max-height: 1000px;
+            transition: all .5s ease;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.6rem;
+
+        @include hover() {
+            & span {
+                color: var(--color-primary-orange);
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & span {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            color: var(--color-black);
+            cursor: pointer;
+        }
+
+        & svg {
+            display: none;
+            cursor: pointer;
+        }
+
+        &_active {
+            & span {
+                color: var(--color-primary-orange);
+            }
+
+            & svg {
+                display: block;
+            }
+        }
+    }
+
+    //& {}
+
+    //& {}
+}

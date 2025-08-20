@@ -1,0 +1,48 @@
+@import "../../../app/_styles/mixins";
+
+
+.tenant-contacts{
+
+  &__block{
+    margin: 0 0 6rem;
+    @include screen-breakpoint($screen-middle-px){
+      margin: 0 0 4rem;
+    }
+    & + &{
+      padding: 6rem 0 0 ;
+      border-top: 1px solid rgba(0,0,0,.2);
+      @include screen-breakpoint($screen-middle-px){
+        padding: 4rem 0 0 ;
+      }
+    }
+  }
+  &__title{
+    margin: 0 0 4rem;
+    color: var(--color-primary-blue);
+    font-weight: 600;
+    font-size: 3.2rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  &__grid{
+    display: grid;
+    grid-template-columns: 48rem auto;
+    grid-column-gap: 22rem;
+    @include screen-breakpoint($screen-middle-px){
+      display: block;
+    }
+
+  }
+  &__desc{
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    color: var(--color-black);
+  }
+  &__contacts{
+    @include screen-breakpoint($screen-middle-px){
+      margin: 4rem 0 0;
+    }
+  }
+
+}

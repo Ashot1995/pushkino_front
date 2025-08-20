@@ -1,0 +1,135 @@
+@import "../../app/_styles/mixins";
+
+.renters-group-tile {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    border: 1px solid var(--color-transparent-black);
+    border-radius: 2.4rem;
+    overflow: hidden;
+
+    &__liter {
+        grid-column: span 1;
+        padding-top: 3rem;
+        background-color: #f7f7f7;
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--color-black);
+
+        @include screen-breakpoint($screen-middle-px) {
+            padding-top: 2rem;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+        }
+    }
+
+    &__renters {
+        grid-column: span 8;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem 2rem;
+        padding: 3rem 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            padding: 2rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__renter {}
+
+    &__renter-title {
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 1.27273;
+        color: var(--color-black);
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            margin-bottom: .8rem;
+        }
+    }
+
+    &__renter-category {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        color: var(--color-black);
+        margin-bottom: 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__renter-stocks {
+        display: flex;
+        column-gap: .8rem;
+        margin-bottom: 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__renter-stock {
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        color: var(--color-white);
+        padding: .5rem 1rem;
+        border-radius: 10rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.2rem;
+        }
+
+        &_green {
+            background-color: var(--color-primary-green);
+        }
+
+        &_orange {
+            background-color: var(--color-primary-orange);
+        }
+    }
+
+    &__renter-navigation {
+        display: flex;
+        column-gap: 2rem;
+        align-items: center;
+    }
+
+    &__renter-floor {
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        color: var(--color-black);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__renter-map {
+        display: flex;
+        column-gap: 1rem;
+        align-items: center;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        color: var(--color-primary-orange);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.2rem;
+        }
+    }
+}

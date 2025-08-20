@@ -1,0 +1,94 @@
+@import "../../../app/_styles/mixins";
+
+.event-schedule {
+    margin-bottom: 6rem;
+
+    @include screen-breakpoint($screen-small-px) {
+        margin-bottom: 4rem;
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+
+        @include screen-breakpoint($screen-small-px) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__slider-buttons {
+        display: flex;
+        column-gap: 1.2rem;
+        justify-content: right;
+
+        & button {
+            cursor: pointer;
+
+            @include screen-breakpoint($screen-middle-px) {
+                width: 4rem;
+                height: 4rem;
+
+                & svg {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            @include screen-breakpoint($screen-small-px) {
+                width: 3.6rem;
+                height: 3.6rem;
+
+                & svg {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+            }
+        }
+    }
+
+    &__swiper {
+        margin-top: 1.6rem;
+    }
+
+    &__item {
+        padding: 2rem;
+        border: 1px solid var(--color-transparent-black);
+        border-radius: 2.4rem;
+    }
+
+    &__item-heading {
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 1.27273;
+        color: var(--color-primary-blue);
+        margin-bottom: 1.6rem;
+    }
+
+    &__item-time {
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 1.27273;
+        color: var(--color-black);
+        margin-bottom: 1.2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.8rem;
+            line-height: 1.33333;
+        }
+    }
+
+    &__item-description {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-black);
+        margin-bottom: 1.6rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

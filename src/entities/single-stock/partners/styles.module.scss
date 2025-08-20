@@ -1,0 +1,58 @@
+@import "../../../app/_styles/mixins";
+
+.single-stock-partners {
+    margin-bottom: 9rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+        margin-bottom: 6rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+        margin-bottom: 4rem;
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+        margin-bottom: 1rem;
+    }
+
+    &__slider-buttons {
+        display: flex;
+        column-gap: 1.2rem;
+        justify-content: right;
+        margin-bottom: 1.6rem;
+
+        & button {
+            border-color: var(--color-transparent-black);
+            cursor: pointer;
+
+            @include screen-breakpoint($screen-middle-px) {
+                width: 4rem;
+                height: 4rem;
+
+                & svg {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            @include screen-breakpoint($screen-small-px) {
+                width: 3.6rem;
+                height: 3.6rem;
+
+                & svg {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+            }
+
+            & svg path {
+                fill: var(--color-transparent-black);
+            }
+        }
+    }
+}

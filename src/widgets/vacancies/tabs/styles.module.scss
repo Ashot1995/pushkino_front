@@ -1,0 +1,128 @@
+@import "../../../app/_styles/mixins";
+
+.vacancy-tabs {
+  margin-bottom: 4rem;
+
+  @include screen-breakpoint($screen-small-px) {
+    margin-bottom: 2rem;
+  }
+
+  &__heading {
+    color: var(--color-primary-blue);
+    margin-bottom: 3rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__list {
+    border-bottom: 1px solid var(--color-transparent-black);
+    padding-bottom: 2rem;
+    position: relative;
+    @include screen-breakpoint($screen-middle-px) {
+      padding: 0;
+
+    }
+
+    &_open {
+      @include screen-breakpoint($screen-middle-px) {
+        position: relative;
+        z-index: 2;
+        .vacancy-tabs__grid {
+          padding: 2rem;
+          height: auto;
+          visibility: visible;
+        }
+        .vacancy-tabs__title {
+              color: var(--color-primary-blue);
+          svg{
+            fill: var(--color-primary-blue);
+            transform: translate(0,-50%) scaleY(-1);
+          }
+        }
+
+        .vacancy-tabs__item_active{
+          color: var(--color-black);
+        }
+
+      }
+    }
+  }
+
+  &__grid {
+    display: flex;
+    gap: 3rem 4rem;
+    flex-wrap: wrap;
+    @include screen-breakpoint($screen-middle-px) {
+      transition: height visibility var(--animation-transition);
+      height: 0;
+      visibility: hidden;
+      flex-direction: column;
+      gap: unset;
+      position: absolute;
+      width: 100%;
+      top: calc(100% + 1px);
+      left: 0;
+      background: var(--color-white);
+
+      border-bottom: 1px solid var(--color-transparent-black);
+      border-left: 1px solid var(--color-transparent-black);
+      border-right: 1px solid var(--color-transparent-black);
+      border-radius: 0 0 2.4rem 2.4rem;
+      overflow: hidden;
+    }
+  }
+
+  &__title,
+  &__item {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    text-transform: uppercase;
+    color: var(--color-black);
+    cursor: pointer;
+    transition: var(--animation-transition);
+
+    &_active {
+      color: var(--color-primary-blue);
+    }
+  }
+
+  &__title {
+    color: var(--color-transparent-black);
+    padding: 2rem 0;
+    display: none;
+    @include screen-breakpoint($screen-middle-px) {
+      display: block;
+      position: relative;
+      svg{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        fill: var(--color-black);
+        transition:var(--animation-transition);
+        transform: translate(0,-50%) scaleY(1) ;
+        transform-origin: center;
+      }
+    }
+  }
+
+  &__item {
+    @include screen-breakpoint($screen-middle-px) {
+
+      width: 100%;
+      margin-bottom: 2rem;
+      transition: var(--animation-transition);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include hover() {
+        color: var(--color-primary-blue);
+        background: var(--color-transparent-black);
+      }
+    }
+  }
+}

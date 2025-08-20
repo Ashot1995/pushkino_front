@@ -1,0 +1,169 @@
+@import "../../../app/_styles/mixins";
+
+.renters-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-transparent-black);
+    margin-bottom: 4rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+        margin-bottom: 2rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        column-gap: 2rem;
+        align-items: center;
+        
+        @include screen-breakpoint($screen-small-px) {
+            display: block;
+        }
+    }
+
+    &__search {
+
+        @include screen-breakpoint($screen-small-px) {
+            width: 10rem;
+        }
+
+        & input {
+            background-position: 0 center;
+            padding-left: 4rem;
+
+            @include screen-breakpoint($screen-small-px) {
+                padding: 0 1rem 0 2.7rem;
+            }
+        }
+    }
+
+    &__floor {
+        position: relative;
+        margin-right: 8rem;
+    }
+
+    &__floor-button {
+        display: flex;
+        column-gap: 1.2rem;
+        align-items: center;
+        cursor: pointer;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: none;
+        }
+
+        & span {
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            text-transform: uppercase;
+            color: var(--color-black);
+        }
+
+        & svg {
+            transition: transform .5s ease;
+        }
+
+        &_active {
+            & svg {
+                transform: rotate(180deg);
+                transition: transform .5s ease;
+            }
+        }
+    }
+
+    &__param-list {
+        position: absolute;
+        top: 5.6rem;
+        left: -2rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.4rem;
+        border: 1px solid var(--color-transparent-black);
+        border-top: none;
+        padding: 0 2rem;
+        border-radius: 0 0 2.4rem 2.4rem;
+        background-color: var(--color-white);
+        width: 20rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: all .5s ease;
+        z-index: 1;
+
+        @include screen-breakpoint($screen-middle-px) {
+            top: 4.4rem;
+            left: 10rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            top: 2rem;
+            left: -1.9rem;
+            width: 35.5rem;
+            border-left: none;
+            border-right: none;
+        }
+
+        &_active {
+            max-height: 1000px;
+            transition: all .5s ease;
+            padding: 2rem;
+        }
+    }
+
+    &__param-list-item {
+
+        &_mobile {
+            display: none;
+
+            @include screen-breakpoint($screen-middle-px) {
+                display: block;
+            }
+        }
+
+        & label span {
+            font-weight: 600;
+            font-size: 1.6rem;
+            line-height: 1.25;
+            color: var(--color-black);
+        }
+    }
+
+    &__stocks {
+        display: flex;
+        column-gap: 2rem;
+        align-items: center;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: none;
+        }
+    }
+
+    &__stock {
+    }
+
+    &__mobile-params {
+        display: none;
+        cursor: pointer;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: block;
+        }
+    }
+
+    &__view-modes {
+        display: flex;
+        column-gap: 4rem;
+
+        @include screen-breakpoint($screen-small-px) {
+            column-gap: 1rem;
+        }
+    }
+
+    &__view-mode {
+
+        & svg {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@import "../../../app/_styles/mixins";
+
+.stocks-list {
+
+    &__heading {
+        color: var(--color-primary-blue);
+        margin-bottom: 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: block;
+        }
+    }
+
+    &__left-column {
+        grid-column: span 3;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 1.5rem;
+            margin-bottom: 35px;
+        }
+    }
+}

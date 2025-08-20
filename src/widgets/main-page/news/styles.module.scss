@@ -1,0 +1,172 @@
+@import "../../../app/_styles/mixins";
+
+.news {
+    padding: 5rem 0 9.6rem 0;
+
+    @include screen-breakpoint($screen-middle-px) {
+        padding: 4rem 0;
+    }
+
+    img {
+        position: relative !important;
+        display: block;
+        height: 100%;
+        width: 100%;
+        inset: 0px;
+        object-fit: fill !important;
+        object-position: center center;
+    }
+
+    &__preheading {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-black);
+        margin-bottom: 1.6rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: none;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 7.2rem;
+        line-height: 1.16667;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 3.2rem;
+            letter-spacing: 0.01em;
+            margin-bottom: 3rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            display: inline-block;
+        }
+    }
+
+    &__slider-buttons {
+        display: flex;
+        column-gap: 1.2rem;
+        justify-content: right;
+
+        & button {
+
+            @include screen-breakpoint($screen-middle-px) {
+                width: 4rem;
+                height: 4rem;
+
+                & svg {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            @include screen-breakpoint($screen-small-px) {
+                width: 3.6rem;
+                height: 3.6rem;
+
+                & svg {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+            }
+        }
+    }
+
+    &__swiper {
+        margin-top: 1.6rem;
+    }
+
+    &__slide {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        height: auto;
+        @include screen-breakpoint($screen-middle-px) {
+            height: auto;
+        }
+    }
+
+    &__big-image,
+    &__small-image {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--color-transparent-black);
+        border-radius: 2.4rem;
+        margin-bottom: 1rem;
+    }
+
+    &__big-image-block {
+        width: calc(30% + 15px);
+        height: auto;
+        min-height: 19.5rem;
+        @include screen-breakpoint($screen-middle-px) {
+            width: calc(100% - 10px);
+        }
+    }
+
+    &__big-image {
+        width: 100%;
+        height: 19.53rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            width: 100%;
+            height: 16.011rem;
+        }
+    }
+
+    // &__small-images {
+    //     display: flex;
+    //     gap: 10px;
+    //     width: calc(30% + 15px);
+    //     height: auto;
+    //     min-height: 19.5rem;
+    //     justify-content: flex-start;
+    //     align-items: flex-start;
+    //     flex-wrap: wrap;
+    //     height: fit-content;
+
+    //     &_translate {
+    //         transform: translateY(9rem);
+
+    //         @include screen-breakpoint($screen-middle-px) {
+    //             transform: none;
+    //         }
+    //     }
+    // }
+
+    &__small-image-block {
+        width: calc(30% + 15px);
+        &:first-child .news__title {
+            display: block;
+            @include screen-breakpoint($screen-middle-px) {
+                display: block;
+            }
+        }
+        @include screen-breakpoint($screen-middle-px) {
+            width: calc(100% - 10px);
+        }
+    }
+
+    &__small-image {
+        width: 100%;
+        height: 100%;
+        max-height: 19.53rem;
+        @include screen-breakpoint($screen-small-px) {
+            width: 100%;
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: rgba(1, 1, 1, .7);
+    }
+}

@@ -1,0 +1,212 @@
+@import "../../../app/_styles/mixins";
+
+.cinema {
+    //max-width: 1440px;
+    margin: 0 auto;
+    background: var(--bg-cyan);
+    padding: 5rem 0 6rem 0;
+
+    @include screen-breakpoint($screen-middle-px) {
+        padding: 4rem 0;
+    }
+
+    &__top-line {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem 0;
+
+        @include screen-breakpoint($screen-small-px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__data {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-small-px) {
+            flex-direction: column;
+            row-gap: 1rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__site {
+        @include screen-breakpoint($screen-small-px) {
+            display: none;
+        }
+    }
+
+    &__date {}
+
+    &__heading {
+        font-weight: 600;
+        font-size: 7.2rem;
+        line-height: 1.16667;
+        text-transform: uppercase;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 3.2rem;
+            letter-spacing: 0.01em;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            display: inline-block;
+        }
+    }
+
+    &__slider {
+        margin-bottom: 6rem;
+    }
+
+    &__slider-buttons {
+        display: flex;
+        column-gap: 1.2rem;
+        justify-content: right;
+        margin-bottom: 1.6rem;
+
+        @include screen-breakpoint($screen-small-px) {
+            display: none;
+        }
+
+        & button {
+            cursor: pointer;
+
+            @include screen-breakpoint($screen-middle-px) {
+                width: 4rem;
+                height: 4rem;
+
+                & svg {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            @include screen-breakpoint($screen-small-px) {
+                width: 3.6rem;
+                height: 3.6rem;
+
+                & svg {
+                    width: 1.6rem;
+                    height: 1.6rem;
+                }
+            }
+        }
+    }
+
+    &__slide {}
+
+    &__slide-image {
+        position: relative;
+        width: 100%;
+        height: 42rem;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        margin-bottom: 1.6rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            width: 100%;
+            height: 22.5rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            width: 100%;
+            height: 36rem;
+        }
+    }
+
+    &__slide-title {
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 1.27273;
+        color: var(--color-white);
+        margin-bottom: 1.2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.8rem;
+            line-height: 1.33333;
+        }
+    }
+
+    &__slide-subtitle {
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        color: var(--color-white);
+        text-transform: uppercase;
+        margin-bottom: 1.6rem;
+
+        @include screen-breakpoint($screen-small-px) {
+            line-height: 1.5;
+        }
+    }
+
+    &__slide-sessions {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: .6rem;
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 1.42857;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-middle-px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__slide-session {
+        border: 1px solid var(--color-transparent-white);
+        color: var(--color-transparent-white);
+        border-radius: 2.4rem;
+        padding: .8rem 1.2rem;
+        text-align: center;
+
+        @include hover() {
+            border: 1px solid var(--color-white);
+            color: var(--color-white);
+        }
+    }
+
+    &__subheading {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 2rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        width: 18rem;
+        height: 5.6rem;
+        margin: 6rem auto 0 auto;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-top: 4rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            width: 16rem;
+            height: 5rem;
+            margin-top: 2rem;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+@import "../../app/_styles/mixins";
+
+.btn {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    //display: inline-block;
+    padding: {
+        left: 2.4rem;
+        right: 2.4rem;
+    };
+    color: var(--color-white);
+    border-radius: 20rem;
+    cursor: pointer;
+    background-color: var(--color-primary-orange);
+    text-align: center;
+    border: 1px solid var(--color-primary-orange);
+    width: fit-content;
+    text-decoration: none;
+    //white-space: nowrap;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.8rem;
+
+    @include hover() {
+        color: var(--color-transparent-white) !important;
+    }
+
+    &_transparent {
+        background-color: transparent;
+        border: 1px solid var(--color-white);
+
+        @include hover() {
+            opacity: .7;
+        }
+    }
+
+    &_blue{
+        background-color: transparent;
+        border: 1px solid var(--color-primary-blue);
+        color:  var(--color-primary-blue);
+
+        @include hover() {
+            //opacity: .7;
+            background-color: var(--color-primary-blue);
+            color: var(--color-white)
+        }
+    }
+
+    &:disabled {
+        color: var(--color-transparent-white);
+        cursor: default;
+    }
+
+    &__circle {
+        width: 4.8rem;
+        height: 4.8rem;
+        flex-shrink: 0;
+        padding: 0;
+        opacity: .7;
+
+        @include hover() {
+            opacity: 1;
+        }
+
+        &:disabled {
+            background-color: transparent;
+            border: 1px solid var(--color-transparent-white);
+
+            & svg path {
+                fill: var(--color-transparent-white);
+            }
+        }
+
+        & svg {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+
+        &_white {
+            background-color: transparent;
+            border: 1px solid var(--color-white);
+        }
+
+        &_gray {
+            background-color: transparent;
+            border: 1px solid var(--color-transparent-black);
+        }
+
+        &_black {
+            background-color: transparent;
+            border: 1px solid var(--color-black);
+
+            &:disabled {
+                background-color: transparent;
+                border: 1px solid var(--color-transparent-black);
+
+                & svg path {
+                    fill: var(--color-transparent-black);
+                }
+            }
+        }
+
+        &_revers {
+            & svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@import "../../../app/_styles/mixins";
+
+.renters-items {
+    grid-column: span 9;
+
+    &_tiles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem 2rem;
+
+        @include screen-breakpoint($screen-small-px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &-four-columns {
+            grid-template-columns: repeat(4, 1fr);
+
+            @include screen-breakpoint($screen-middle-px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include screen-breakpoint($screen-small-px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    &_list {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+}

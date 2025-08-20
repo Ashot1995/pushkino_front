@@ -1,0 +1,67 @@
+@import "../../app/_styles/mixins";
+
+.contacts {
+  &__title {
+    margin: 0 0 2rem;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.33333;
+    color: var(--color-black);
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__section {
+    margin-bottom: 25px;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__num {
+    pre {
+      all: unset;
+    }
+
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1.27273;
+    color: var(--color-black);
+
+    & + & {
+      margin: 1.2rem 0 0;
+    }
+  }
+
+  &__email {
+    display: block;
+    margin: 1.2rem 0 0;
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1.27273;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--color-primary-blue);
+
+    & + & {
+      margin: 1.2rem 0 0;
+    }
+  }
+
+  &__btn {
+    margin: 4rem 0 0;
+  }
+}

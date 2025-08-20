@@ -1,0 +1,212 @@
+@import "../../../app/_styles/mixins";
+
+.stocks-categories {
+    position: relative;
+    margin-bottom: 3rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    &__select-category-wrapper {
+        display: none;
+
+        @include screen-breakpoint($screen-middle-px) {
+            display: flex;
+            column-gap: 1.2rem;
+        }
+    }
+
+    &__select-category {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        border-bottom: 1px solid var(--color-transparent-black);
+        padding-bottom: 2rem;
+        margin-bottom: 4rem;
+        cursor: pointer;
+
+        & span {
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            text-transform: uppercase;
+            color: var(--color-transparent-black);
+        }
+
+        & svg {
+            transition: transform .5s ease;
+        }
+
+        &_active {
+
+            & span {
+                color: var(--color-primary-blue);
+            }
+
+            & svg {
+                fill: var(--color-primary-blue);
+                transform: rotate(180deg);
+                transition: transform .5s ease;
+            }
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__select-category-back-btn {
+        display: none;
+
+        & svg {
+            transform: rotate(180deg);
+            cursor: pointer;
+        }
+
+        &_selected {
+            display: block;
+        }
+    }
+
+    &__wrapper {
+        border: 1px solid var(--color-transparent-black);
+        border-radius: 2.4rem;
+        padding: 2rem;
+        background-color: var(--color-white);
+        z-index: 2;
+
+        @include screen-breakpoint($screen-middle-px) {
+            position: absolute;
+            top: 4.4rem;
+            left: 0;
+            width: 100%;
+            border-top: none;
+            border-radius: 0 0 2.4rem 2.4rem;
+            max-height: 0;
+            padding: 0;
+            overflow: hidden;
+            transition: max-height, padding .5s ease;
+
+            &_active {
+                max-height: 1000px;
+                padding: 2rem;
+                transition: max-height, padding .5s ease;
+            }
+        }
+    }
+
+    &__main-category {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 1.6rem;
+        }
+
+        & span {
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            color: var(--color-black);
+        }
+
+        & svg {
+            transition: transform .5s ease;
+        }
+
+        &_desk {
+            display: flex;
+
+            &-active {
+
+                & span {
+                    color: var(--color-primary-orange);
+                }
+
+                & svg {
+                    transform: rotate(180deg);
+                    transition: transform .5s ease;
+                }
+            }
+
+            @include screen-breakpoint($screen-middle-px) {
+                display: none;
+            }
+        }
+
+        &_mob {
+            display: none;
+
+            @include screen-breakpoint($screen-middle-px) {
+                display: block;
+            }
+
+            &-active {
+                display: none;
+            }
+        }
+    }
+
+    &__subcategories-list {
+        padding-left: 3.2rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .5s ease;
+
+        @include screen-breakpoint($screen-middle-px) {
+            padding-left: 0;
+            transition: none;
+        }
+
+        &_active {
+            max-height: 1000px;
+            transition: max-height .5s ease;
+
+            @include screen-breakpoint($screen-middle-px) {
+                transition: none;
+            }
+        }
+
+        & span {
+
+        }
+    }
+
+    &__sub-item-wrapper {
+        display: flex;
+        column-gap: 1em;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.6rem;
+
+        & svg {
+            display: none;
+            cursor: pointer;
+        }
+
+        &_active {
+            & span {
+                color: var(--color-primary-orange);
+            }
+
+            & svg {
+                display: block;
+            }
+        }
+    }
+
+    &__sub-item {
+        display: block;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-black);
+        cursor: pointer;
+    }
+}

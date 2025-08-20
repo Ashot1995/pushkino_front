@@ -1,0 +1,213 @@
+@import "../../../app/_styles/mixins";
+
+.subscribe {
+    //padding: 4rem 0 0 0;
+
+    @include screen-breakpoint($screen-small-px) {
+        //padding: 5rem 0 5rem 0;
+        padding-bottom: 5rem;
+    }
+
+    &__links {
+        display: flex;
+        //column-gap: 6rem;
+        justify-content: center;
+        //align-items: center;
+
+        @include screen-breakpoint($screen-middle-px) {
+            flex-direction: column;
+            align-items: start;
+            justify-content: normal;
+            gap: 3.2rem 0;
+            border-bottom: 1px solid var(--color-transparent-black);
+            padding: 4rem 0;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            border-bottom: none;
+            padding: 5rem 0;
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding: 4rem 0;
+        width: 18rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        
+        @include screen-breakpoint($screen-middle-px) {
+            padding: 0;
+            text-align: left;
+            width: 100%;
+            display: block;
+        }
+
+        @include hover() {
+            & a {
+                color: var(--color-white);
+            }
+
+            &:before {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-primary-orange);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0 0 50% 50%;
+            z-index: -1;
+            transform: translateY(-105%) rotate(25deg);
+            transition: transform .5s ease;
+
+            @include screen-breakpoint($screen-middle-px) {
+                content: none;
+            }
+        }
+
+        & a {
+            width: 16rem;
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            text-transform: uppercase;
+            color: var(--color-primary-blue);
+            transition: color .5s ease;
+
+            @include screen-breakpoint($screen-middle-px) {
+                font-size: 3.2rem;
+                letter-spacing: 0.01em;
+                text-transform: uppercase;
+                max-width: none;
+                text-align: left;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+
+        @include screen-breakpoint($screen-small-px) {
+            flex-direction: column-reverse;
+
+        }
+    }
+
+    &__subscribe-block {
+        @include screen-breakpoint($screen-middle-px) {
+            padding-top: 8rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            padding-top: 7rem;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 7rem;
+        line-height: 1.16667;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+        margin-bottom: 5.2rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 3.2rem;
+            letter-spacing: 0.01em;
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__subheading {
+        font-weight: 600;
+        font-size: 2.2rem;
+        line-height: 1.27273;
+        color: var(--color-black);
+        margin-bottom: 1.6rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 1.8rem;
+            line-height: 1.33333;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__input {
+        margin-bottom: 5rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 2rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            margin-bottom: 5rem;
+        }
+
+        & input {
+            width: 32.4rem;
+            border: 1px solid var(--color-transparent-black);
+
+            @include screen-breakpoint($screen-middle-px) {
+                width: 26.4rem;
+            }
+
+            @include screen-breakpoint($screen-small-px) {
+                width: 100%;
+            }
+        }
+
+        & input + label {
+            color: var(--color-black);
+        }
+    }
+
+    &__social {
+        display: flex;
+        column-gap: 2rem;
+
+        & a {
+            width: 6rem;
+            height: 6rem;
+            border: 1px solid var(--color-transparent-black);
+            border-radius: 50%;
+
+            & svg {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+        }
+    }
+
+    &__image {
+        flex-shrink: 0;
+
+        & img {
+            width: 59rem;
+            height: 100%;
+
+            @include screen-breakpoint($screen-middle-px) {
+                position: relative;
+                width: 31.5rem;
+                transform: translateX(3rem);
+                z-index: -1;
+            }
+
+            @include screen-breakpoint($screen-small-px) {
+                position: static;
+                width: 100%;
+                transform: none;
+                z-index: auto;
+            }
+        }
+    }
+}

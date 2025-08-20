@@ -1,0 +1,33 @@
+@import "../../../app/_styles/mixins";
+
+.event-other-news-events {
+    //margin-bottom: 8rem;
+
+    @include screen-breakpoint($screen-middle-px) {
+        margin-bottom: 6rem;
+    }
+
+    @include screen-breakpoint($screen-small-px) {
+        margin-bottom: 4rem;
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--color-primary-blue);
+
+        @include screen-breakpoint($screen-small-px) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    & button {
+        border: 1px solid var(--color-transparent-black);
+    }
+
+    & svg path {
+        fill: var(--color-transparent-black);
+    }
+}

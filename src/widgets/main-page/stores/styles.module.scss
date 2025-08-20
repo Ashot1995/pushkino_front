@@ -1,0 +1,66 @@
+@import "../../../app/_styles/mixins";
+
+.stores {
+    height: 85rem;
+    background: var(--bg-orange);
+
+    @include screen-breakpoint($screen-middle-px) {
+        display: none;
+    }
+
+    &__wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(24, 1fr);
+    }
+
+    &__image {
+        position: relative;
+        height: 85rem;
+        grid-column: span 9;
+        overflow: hidden;
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
+
+        &_blur {
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+    }
+
+    &__links {
+        grid-column: span 15;
+        background: var(--bg-orange);
+        padding: 5rem 0 0 10rem;
+    }
+
+    &__links-heading {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-white);
+        margin-bottom: 4rem;
+    }
+
+    &__links-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3.2rem;
+        transition: var(--animation-transition);
+
+        & a {
+            font-weight: 600;
+            font-size: 3.2rem;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            color: var(--color-transparent-white);
+            width: fit-content;
+
+            @include hover() {
+                color: var(--color-white);
+            }
+        }
+    }
+}

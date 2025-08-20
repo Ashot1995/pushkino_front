@@ -1,0 +1,68 @@
+@import "../../../app/_styles/mixins";
+
+.park {
+    //max-width: 1440px;
+    margin: 0 auto;
+    background: var(--bg-green);
+    padding: 5rem 0 8rem 0;
+
+    @include screen-breakpoint($screen-middle-px) {
+        padding: 4rem 0;
+    }
+
+    &__site {
+        display: block;
+        width: fit-content;
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 1.33333;
+        color: var(--color-white);
+        margin-bottom: 1.6rem;
+
+        @include screen-breakpoint($screen-small-px) {
+            display: none;
+        }
+    }
+
+    &__heading {
+        font-weight: 600;
+        font-size: 7.2rem;
+        line-height: 1.16667;
+        text-transform: uppercase;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-middle-px) {
+            font-size: 3.2rem;
+            letter-spacing: 0.01em;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__slider {
+        margin-bottom: 6rem;
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__subheading {
+        font-weight: 600;
+        font-size: 3.2rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: var(--color-white);
+
+        @include screen-breakpoint($screen-middle-px) {
+            margin-bottom: 2rem;
+        }
+
+        @include screen-breakpoint($screen-small-px) {
+            margin-bottom: 0;
+        }
+    }
+}
