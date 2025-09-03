@@ -38,6 +38,7 @@
         }
 
         @include screen-breakpoint($screen-small-px) {
+          border: none;
             right: 2em;
         }
     }
