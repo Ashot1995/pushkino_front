@@ -18,6 +18,16 @@ export function SingleRenterWidget({data, renterType}) {
     const [cinemasSessionsData, setCinemasSessionsData] = useState(null);
     const [cinemaDonatesData, setCinemaDonatesData] = useState(null);
     const [currentDateTime, setCurrentDateTime] = useState('');
+    const [error, setError] = useState(null);
+
+    if (!data) {
+        return (
+            <div style={{ padding: '2rem', textAlign: 'center' }}>
+                <h1>Данные не найдены</h1>
+                <p>Информация о магазине недоступна.</p>
+            </div>
+        );
+    }
 
     useEffect(() => {
         const fetchCinemaData = async () => {
@@ -43,6 +53,7 @@ export function SingleRenterWidget({data, renterType}) {
                 setCurrentDateTime(dateTime);
             } catch (error) {
                 console.error('Error fetching cinema data:', error);
+                setError('Ошибка загрузки данных кинотеатра');
             }
         };
 
@@ -70,6 +81,13 @@ export function SingleRenterWidget({data, renterType}) {
 
             <main className={styles['single-renter']}>
                 {
+                    error &&
+                        <div style={{ padding: '2rem', textAlign: 'center', color: 'red' }}>
+                            <h2>Ошибка</h2>
+                            <p>{error}</p>
+                        </div>
+                }
+                {
                     data &&
                         <>
                             {
@@ -94,7 +112,7 @@ export function SingleRenterWidget({data, renterType}) {
                                 data.gallery &&
                                     data.gallery.length > 0 &&
                                 <div style={{marginTop: '40px'}}>
-                                        <Gallery data={data.gallery} />
+                                    <Gallery data={data.gallery} />
                                 </div>
                             }
                             {

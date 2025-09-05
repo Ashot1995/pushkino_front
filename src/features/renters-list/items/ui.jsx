@@ -19,10 +19,10 @@ export function RentersListItems({data, type}) {
             `}
         >
             {
-                data &&
+                data && data.stores &&
                     currentViewMode === 'tiles'
-                        ? data.stores?.map((item, index) => <RentersSingleTile data={item} key={index} />)
-                        : Object.keys(data.storesGroup).sort().map((liter, index) => <RentersGroupTile liter={liter} data={data.storesGroup[liter]} key={index} />)
+                        ? data.stores.map((item, index) => <RentersSingleTile data={item} key={index} />)
+                        : data.storesGroup && Object.keys(data.storesGroup).sort().map((liter, index) => <RentersGroupTile liter={liter} data={data.storesGroup[liter]} key={index} />)
             }
         </section>
     )

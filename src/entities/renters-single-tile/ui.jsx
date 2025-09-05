@@ -6,6 +6,9 @@ import {DefaultImage} from "../../shared/ui/defaultImage";
 import styles from './styles.module.scss';
 
 export function RentersSingleTile({data}) {
+    if (!data) {
+        return null;
+    }
     
     return (
         <div className={styles['renters-single-tile']}>

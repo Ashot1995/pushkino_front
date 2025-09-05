@@ -5,6 +5,10 @@ import {SvgIcon} from "../../../shared/ui/svg-icon";
 import styles from './styles.module.scss';
 
 export function SingleRenterContacts({data}) {
+    if (!data) {
+        return null;
+    }
+
     return (
         <UISection defaultClass={styles['renter-contacts']}>
             <div className={styles['renter-contacts__wrapper']}>

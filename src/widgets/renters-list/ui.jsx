@@ -37,9 +37,15 @@ export function RentersList({searchParams, type}) {
     const [rentersDataForSearch, setRentersDataForSearch] = useState(null);
     const [rentersCategories, setRentersCategories] = useState(null);
     const [whatModalShow, setWhatModalShow] = useState('');
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        networkService().getRentersCategories(type).then(setRentersCategories);
+        networkService().getRentersCategories(type)
+            .then(setRentersCategories)
+            .catch(err => {
+                console.error('Error loading categories:', err);
+                setError('Ошибка загрузки категорий');
+            });
 
         locationHref.current = window.location.href;
         windowHistory.current = window.history;
@@ -74,10 +80,16 @@ export function RentersList({searchParams, type}) {
             });
         }
 
-        networkService().getRenters(type, startCategories, startFloors, startNews, startStocks).then(data => {
-            setRentersData(data);
-            setRentersDataForSearch(data);
-        });
+        networkService().getRenters(type, startCategories, startFloors, startNews, startStocks)
+            .then(data => {
+                setRentersData(data);
+                setRentersDataForSearch(data);
+                setError(null);
+            })
+            .catch(err => {
+                console.error('Error loading renters:', err);
+                setError('Ошибка загрузки данных');
+            });
 
     }, []);
 
@@ -89,10 +101,16 @@ export function RentersList({searchParams, type}) {
 
         setRentersData(null);
 
-        networkService().getRenters(type, selectedCategories, selectedFloors, hasNew, hasStock).then(data => {
-            setRentersData(data);
-            setRentersDataForSearch(data);
-        });
+        networkService().getRenters(type, selectedCategories, selectedFloors, hasNew, hasStock)
+            .then(data => {
+                setRentersData(data);
+                setRentersDataForSearch(data);
+                setError(null);
+            })
+            .catch(err => {
+                console.error('Error loading renters:', err);
+                setError('Ошибка загрузки данных');
+            });
 
         if (locationHref.current && windowHistory.current) {
             const url = new URL(locationHref.current);
@@ -177,9 +195,16 @@ export function RentersList({searchParams, type}) {
                             </div>
                     }
                     {
-                        !rentersData &&
+                        !rentersData && !error &&
                             <div className={styles['renters-list__message']}>
                                 Ищем совпадения, подождите...
+                            </div>
+                    }
+                    {
+                        error &&
+                            <div className={styles['renters-list__message']}>
+                                <SvgIcon id='sad' color='#000' />
+                                <span>{error}</span>
                             </div>
                     }
                 </div>
