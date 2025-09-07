@@ -419,6 +419,7 @@
         position: relative;
         grid-column: span 4;
         display: flex;
+        margin-top: 1px;
 
         @include screen-breakpoint($screen-middle-px) {
             grid-column: span 7;
