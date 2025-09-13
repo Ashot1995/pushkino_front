@@ -1,6 +1,7 @@
 @import "../../../app/_styles/mixins";
 
 .banner-theatre-third-rim {
+    top: 30px;
     background: var(--bg-rim);
     padding-top: 22rem;
     height: 85rem;
@@ -109,6 +110,7 @@
         }
 
         @include screen-breakpoint($screen-small-px) {
+            top:30px;
             width: 36rem;
             height: 51.5rem;
             transform: translateX(-2rem);
