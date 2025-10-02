@@ -322,12 +322,6 @@ export function HeaderLayout({throughContacts, categoriesForMenu}) {
                                 <SvgIcon id='clock' color={colorIconsSvg}/>
                                 <span>{headerData?.workingHours?.trc?.hours && headerData.workingHours.trc.hours}</span>
                             </div>
-                            <div className={styles['header__address']}>
-                                <SvgIcon id='location' color={colorIconsSvg}/>
-                                <a href="https://yandex.ru/maps/-/CLE2uFjQ" target="_blank" rel="noopener noreferrer">
-                                    <span>г.Пушкино, Красноармейское шоссе, 104</span>
-                                </a>
-                            </div>
                         </div>
                         <div className={styles['header__top-line-wrap']}>
                             <div className={styles['header__phone-number']}>
@@ -349,15 +343,6 @@ export function HeaderLayout({throughContacts, categoriesForMenu}) {
                                 <span>Меню</span>
                                 <SvgIcon id={iconBurgerMenu} color={colorIconsSvg}/>
                             </button>
-                        </div>
-                    </div>
-
-                    <div className={styles['header__mobile-address']}>
-                        <div className={styles['header__mobile-address-content']}>
-                            <SvgIcon id='location' color={colorIconsSvg}/>
-                            <a href="https://yandex.ru/maps/-/CLE2uFjQ" target="_blank" rel="noopener noreferrer">
-                                <span>г.Пушкино, Красноармейское шоссе, 104</span>
-                            </a>
                         </div>
                     </div>
 
@@ -598,19 +583,6 @@ export function HeaderLayout({throughContacts, categoriesForMenu}) {
                                                 {headerData?.workingHours?.cinema?.hours && headerData.workingHours.cinema.hours}
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className={styles['header__nav-address']}>
-                                    <div className={styles['header__nav-heading']}>Адрес</div>
-                                    <div className={styles['header__nav-address-wrapper']}>
-                                        <a 
-                                            href="https://yandex.ru/maps/-/CLE2uFjQ" 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className={styles['header__nav-address-link']}
-                                        >
-                                            г.Пушкино, Красноармейское шоссе, 104
-                                        </a>
                                     </div>
                                 </div>
                             </div>
