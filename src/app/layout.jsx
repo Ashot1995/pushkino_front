@@ -73,6 +73,7 @@ export default function RootLayout({ children }) {
                         <Footer />
                     </div>
                 </StoreProvider>
+        <script type="text/javascript" id="mapplic-script" src="https://mapplic.com/mapplic.js" defer></script>
             </body>
         </html>
     );

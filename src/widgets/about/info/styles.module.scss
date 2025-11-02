@@ -22,6 +22,9 @@
       max-width: 58rem;
       margin: 0 0 8rem;
       height: 42rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
       @include screen-breakpoint($screen-middle-px){
         height: auto;

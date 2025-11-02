@@ -90,22 +90,10 @@ export function TrcMapWidget() {
                 strategy="afterInteractive"
             />
             <div className={styles['map']}>
-                {!isMapReady && (
-                    <div style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        height: '400px',
-                        fontSize: '16px',
-                        color: '#666'
-                    }}>
-                        Загрузка карты...
-                    </div>
-                )}
-                <mapplic-map 
+                <mapplic-map
                     id="my-map" 
                     data-json="https://mapplic.com/getMapData?id=KSjP1djQmDMPYZVeaaYz"
-                    style={{ display: isMapReady ? 'block' : 'none' }}
+                    style={{ display: 'block' }}
                 ></mapplic-map>
             </div>
             <Script id="refresh-style-map">

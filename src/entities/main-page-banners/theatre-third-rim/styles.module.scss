@@ -110,7 +110,7 @@
         }
 
         @include screen-breakpoint($screen-small-px) {
-            top:30px;
+          top:30px;
             width: 36rem;
             height: 51.5rem;
             transform: translateX(-2rem);
